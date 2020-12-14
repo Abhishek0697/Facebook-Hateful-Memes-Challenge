@@ -2,3 +2,27 @@ MMF framework from FacebookResearch Lab with the changes required to implement t
 
 This folder contains the changes in the code and the commands to run.
 
+Following are the location of the files to be added -
+
+1) Sentiment Analysis -
+    my_model.yaml  -  mmf/configs/models/visual_bert/my_model.yaml
+    my_config.yaml  -  projects/hateful_memes/configs/visual_bert/my_config.yaml
+    
+2) Image Captioning - 
+    my_model2.yaml  -   mmf/configs/models/visual_bert/my_model2.yaml
+    my_config2.yaml   -   projects/hateful_memes/configs/visual_bert/my_config2.yaml
+    
+3) Combined Image captioning and Sentiment Analysis  - 
+    my_model3.yaml  -   mmf/configs/models/visual_bert/my_model3.yaml
+    my_config3.yaml   -   projects/hateful_memes/configs/visual_bert/my_config3.yaml
+    
+ Dataset changes. 
+ 
+ defaults.yaml   -    mmf/configs/datasets/hateful_memes/defaults.yaml
+ dataset.py   -   mmf/datasets/builders/hateful_memes/dataset.py
+ defaults.yaml    -     projects/visual_bert/configs/hateful_memes/defaults.yaml
+ 
+Visual Bert Model Changes. 
+
+visual_bert.py    -   mmf/models/visual_bert.py
+
