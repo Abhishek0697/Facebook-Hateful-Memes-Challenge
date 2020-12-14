@@ -1,0 +1,34 @@
+model_config:
+  visual_bert_caption:
+    bert_model_name: bert-base-uncased
+    training_head_type: pretraining
+    visual_embedding_dim: 2048
+    special_visual_initialize: true
+    embedding_strategy: plain
+    bypass_transformer: false
+    output_attentions: false
+    output_hidden_states: True
+    random_initialize: false
+    freeze_base: false
+    finetune_lr_multiplier: 1
+    # Default points to BERT pooler strategy which is to take
+    # representation of CLS token after passing it through a dense layer
+    pooler_strategy: default
+    classifier:
+      type: mlp
+      params:
+        # 768 + 768 in case of features
+        # Modal_Dim * Number of embeddings + Text Dim
+        in_dim: 1536
+        out_dim: 2
+        hidden_dim: 256
+        num_layers: 2
+    text_encoder:
+      type: transformer
+      params:
+        bert_model_name: bert-base-uncased
+        hidden_size: 768
+        num_hidden_layers: 12
+        num_attention_heads: 12
+        output_attentions: false
+        output_hidden_states: false
